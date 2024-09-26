@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer text-type="text/javascript"></script>
+</head>
+<!-- Tela cadastro de clientes -->
+
+<body>
+    <!-- Secção para Preenchimento de dados basicos -->
+    <section>
+        <fieldset>
+            <legend>Dados Basicos</legend>
+            <label for="responsavel">Responsavel</label>
+            <input type="text" id="responsavel" name="responsavel" readonly>
+
+            <label for="datahora">Data e Hora</label>
+            <input type="text" id="datahora" name="datahora" readonly>
+
+            <label>Documento</label>
+            <select id="tipo-documento" name="tipo-documento">
+                <option value="">Selecione o tipo de documento:</option>
+                <option value="CPF">CPF</option>
+                <option value="CNPJ">CNPJ</option>
+                <option value="EX">EX</option>
+            </select>
+            <input type="number" id="n-documento" name="n-documento" placeholder="N° do documento">
+
+            <label for="date-fund">Data Fund.</label>
+            <input type="date" id="date-fund" name="date-fund">
+
+            <label for="razao-social">Razão Social</label>
+            <input type="text" id="razao-social" name="razao-social">
+
+            <label for="nome-fantasia">Nome Fantasia</label>
+            <input type="text" id="nome-fantasia" name="nome-fantasia">
+
+            <label for="insc-est">Inscrição Estadual</label>
+            <input type="text" id="insc-est" name="insc-est">
+
+            <label>
+                <input type="checkbox" id="ie-espec" name="ie-espec">
+                IE Especial
+            </label>
+        </fieldset>
+    </section>
+
+    <!-- Secção para Informar o endereço principal -->
+    <section>
+        <fieldset>
+            <legend>Endereço principal</legend>
+            <label for="address">Endereço</label>
+            <input type="text" id="address" name="address">
+
+            <label for="complement">Complemento</label>
+            <input type="text" id="complement" name="complement">
+
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro">
+
+            <label>Pais</label>
+            <select id="pais" nome="pais">
+                <option value="brasil">Brasil</option>
+                <option value="coreia-s">Coreia do Sul</option>
+            </select>
+
+            <label for="postal">Caixa Postal</label>
+            <input type="text" id="postal" name="postal">
+
+            <label for="cep">CEP</label>
+            <input type="number" id="cep" name="cep">
+
+            <label>Estado</label>
+            <select id="estado" name="estado">
+                <option value="">Selecione o estado:</option>
+            </select>
+
+            <label>Cidade</label>
+            <select id="cidade" name="cidade">
+                <option value="">Selecione a Cidade:</option>
+            </select>
+
+            <label for="web">Pagina Web:</label>
+            <input type="url" id="web" name="web">
+
+            <label for="linkedin">LinkdIn</label>
+            <input type="text" id="linkedin" name="linkedin">
+        </fieldset>
+    </section>
+
+    <!-- Secção para Telefones -->
+    <section>
+        <fieldset>
+            <legend>Telefone</legend>
+            <label for="comercial">Tel. Comercial:</label>
+            <input type="text" id="comercial" name="comercial" maxlength="2" pattern="\d{2}">
+            <input type="text" id="comercial" name="comercial" maxlength="9" pattern="\d{9}">
+
+            <label for="comercial2">Tel. Comercial 2</label>
+            <input type="text" id="comercial2" name="comercial2" maxlength="2" pattern="\d{2}">
+            <input type="text" id="comercial2" name="comercial2" maxlength="9" pattern="\d{9}">
+        </fieldset>
+    </section>
+
+    <!-- Secção para Observações -->
+    <section>
+        <fieldset>
+            <legend>Observações</legend>
+            <textarea id="observacoes" name="observacoes"></textarea>
+        </fieldset>
+    </section>
+
+    <!-- Secção Fases de Venda -->
+    <section>
+        <fieldset>
+            <legend>Fases da Venda</legend>
+            <input type="text" id="fase-venda" readonly>
+            <button id="hisBtn">Historico de Fases</button>
+        </fieldset>
+    </section>
+
+    <!-- Secção para Especificações -->
+    <section>
+        <fieldset>
+            <legend>Especificação</legend>
+            <label for="entrada">Forma de Entrada:</label>
+            <input type="checkbox" id="entrada" name="entrada">
+            Ativo (Outbound)
+            <input type="checkbox" id="entrada2" name="entrada2">
+            Receptivo (Inbound)
+
+            <label for="class-cli">Classificação do Cliente</label>
+            <select id="class-cli" name="class-cli">
+                <option value="sem-class">Sem Classificação</option>
+                <option value="fraco">Fraco</option>
+                <option value="regular">Regular</option>
+                <option value="bom">Bom</option>
+                <option value="otimo">Ótimo</option>
+            </select>
+
+            <label for="qual-cli">Qualificação do Cliente</label>
+            <select id="qual-cli" name="qual-cli">
+                <option value="sem-qual">Sem Qualificação</option>
+                <option value="em-homo">Em Homologação</option>
+                <option value="homo">Homologado</option>
+                <option value="homo-com">Homologado com Comissão</option>
+            </select>
+        </fieldset>
+    </section>
+
+    <!-- Secção Dados dos Clientes -->
+    <section>
+        <fieldset>
+            <legend>Tipo de Cliente</legend>
+            <select id="type" name="type">
+                <option value="">Selecione o tipo de cliente</option>
+                <option value="cliente-final">Cliente Final</option>
+                <option value="cliente-difal">Cliente Final com Difal</option>
+                <option value="dev">Desenvolvedor</option>
+                <option value="dev-ho">Desenvolvedor Homologado</option>
+                <option value="industria">Industria</option>
+                <option value="revenda">Revenda</option>
+                <option value="reve-hibri">Revenda Hibrida</option>
+            </select>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Ramo de Atividade</legend>
+            <select id="ramo" name="ramo">
+                <option value="">Selecione o Ramo</option>
+            </select>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Atividade Especifica</legend>
+            <select id="espec-atv" name="espec-atv">
+                <option value="">Selecione as atividades</option>
+
+            </select>
+        </fieldset>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const tipoSelect = document.getElementById('type');
+                const ramoSelect = document.getElementById('ramo');
+                const atvSelect = document.getElementById('espec-atv');
+
+                const ramoOptions = {
+                    "cliente-final": ["Agronegocios", "Alimenticio", "Associação", "Cartório", "Certificadora Digital", "Construção", "Consultoria", "Contratos/Pad de Assinatura", "Cooperativa", "DETRAN",
+                        "Diversos", "Educação", "EPI/Pad de Assinaturas", "EPI/Segurança do trabalho", "Escritorio", "Fabrica", "Farmacia", "Industrias", "Instituição Financeira", "Medicina do Trabalho", "Órgão Publico",
+                        "Pessoa Fisica", "Posto de Combustivel", "Saude", "Sindicato", "SST/Pad de Assinaturas", "Supermercado", "Transporte", "Usina", "Varejo", "Veicular"],
+                    "cliente-difal": ["Alimenticio", "Associação", "Cartório", "Construção", "Consultoria", "Contratos/Pad de Assinatura", "Cooperativa", "DETRAN", "Diversos", "Educação", "EPI/Pad de Assinaturas",
+                        "EPI/Segurança do trabalho", "Escritorio", "Farmacia", "Industrias", "Instituição Financeira", "Medicina do Trabalho", "Órgão Publico", "Pessoa Fisica", "Posto de Combustivel", "Saude", "Sindicato",
+                        "SST/Pad de Assinaturas", "Supermercado", "Transporte", "Usina", "Varejo", "Veicular"],
+                    "dev": ["Abis", "Academia", "Advocacia", "Apontamento de Funcionarios", "Automação Comercial", "Biblioteca/Livraria", "Cartório", "Cemiterio/Funerária", "Certificado Digital", "CFC - Centro de Formação de Condutores",
+                        "Clínica", "Clínica Medicina e Segurança do Trabalho", "Clube", "Concessionaria", "Condominio", "Contratos/Pad de Assinaturas", "Controle de Acesso", "Controle de Frota/ Transportadora", "EPI - Equipamento de Proteção Individual",
+                        "EPI/Pad de Assinaturas", "ERP - Gestao Empresarial", "Escola/Faculdade/Curso", "Escritorio Contabil", "Estacionamento/Lava Rapido", "Estoque", "Exames Toxicologicos", "Farmacia", "Franquia", "Gerenciamento de Impressão",
+                        "Hardware", "Hospital/Clínica/Laboratorio", "Hotelaria", "Igreja", "Imobiliaria/Construtora", "Informatica", "Inspeção Veicular/Rastreamento", "Instituição Financeiras",
+                        "Integração nas Impressoras", "Integrador", "Laboratorio", "Licitação", "Locação de bens", "Locadora de Video", "Logon de Sistemas", "Loja de Departamento", "Materias Elétricos/Construcao",
+                        "Medicina do Trabalho", "Odontologico", "Operadora de Cartão", "Operadora de Plano de Saude", "Órgão Publico/Prefeitura", "PDV - Frente de Caixa", "Penitenciaria", "Pet Shop/Veterinario", "Portuario",
+                        "Posto de Combustivel/Conveniência", "Restaurante/Padaria/Bar/Casa Noturna", "Salão de Beleza", "Saúde", "Segurança/Carro Forte", "Sites", "Soluções Mobile", "SST /Pad de Assinaturas", "Supermercados", "Tecnologia em Dermatoglifia", "Toten Publicitario/Terminais", "Varejo"],
+                    "dev-ho": ["Abis", "Academia", "Advocacia", "Apontamento de Funcionarios", "Automação Comercial", "Biblioteca/Livraria", "Cartório", "Cemiterio/Funerária", "Certificado Digital", "CFC - Centro de Formação de Condutores",
+                        "Clube", "Concessionaria", "Condominio", "Contratos/Pad de Assinaturas", "Controle de Acesso", "Controle de Frotas/Transportadora", "EPI - Equipamento de Proteção Individual", "EPI/Pad de Assinaturas", "ERP - Gestao Empresarial",
+                        "Escola/Faculdade/Curso", "Escritorios Contabil", "Estacionamento/Lava Rapido", "Estoque", "Exames Toxicologicos", "Farmacia", "Franquia", "Gerenciamento de Impressão", "Hardware", "Hospital/Clínica/Laboratorio",
+                        "Hotelaria", "Igreja", "Imobiliaria/Construtora", "Informatica", "Inspeção Veicular/Rastreamento", "Instituição Financeiras", "Integracao nas Impressoras", "Integrador", "Licitação", "Locação de Bens", "Locadora de Video", "Logon de Sistemas",
+                        "Loja de Departamento", "Materiais Elétricos/Construcao", "Operadora de Cartão", "Órgão Publico/Prefeitura", "PDV - Frente de Caixa", "Penintenciaria", "Pet Shop/Veterinario", "Portuario", "Posto de Combustivel/Conveniência",
+                        "Restaurante/Padaria/Bar/Casa Noturna", "Salão de Beleza", "Saude", "Segurança/Carro Forte", "Sites", "Soluções Mobile", "SST /Pad de Assinaturas", "Supermercados", "Tecnologia em Dermatoglifia", "Toten Publicitario/Terminais", "Varejo"],
+                    "industria": ["Industria", "Integrador"],
+                    "revenda": ["Automação", "EPI", "Informatica", "Licitação", "Varejo"],
+                    "reve-hibri": ["Automação", "EPI", "Informatica", "Licitação", "Varejo"]
+                };
+
+                const atividadeOptions = {
+                    "Diversos": ["Academia", "Clínica Medicina e Segurança do Trabalho"],
+                    "Fábrica": ["EPI"],
+                    "Farmácia": ["PDV"],
+                    "Supermercado": ["EPI", "PDV"],
+                    "DETRAN": ["CFC", "Clinica"],
+                    "Órgão Publico": ["Apontamento", "EPI"],
+                    "Saúde": ["EPI/Pad de Assinaturas", "SST/Pad de Assinaturas", "Saúde e Segurança do Trabalho - SST"],
+                    "Biblioteca/Livraria": ["Identificação/Validação de Usuários"],
+                    "CFC - Centro de Formação de Condutores": ["Permissão para dirigir"],
+                    "Controle de Acesso": ["Academia", "Acesso Sistema"],
+                    "PDV - Frente de Caixa": ["Fechamento e Abertura de Caixa", "Identificação do Cliente", "Identificação do Fiscal do Caixa", "Troca de Operadores"],
+
+                }
+
+                tipoSelect.addEventListener("change", function () {
+                    const selectedTipo = tipoSelect.value;
+                    console.log("Valor:", selectedTipo);
+                    ramoSelect.innerHTML = "";
+
+                    if (selectedTipo && ramoOptions[selectedTipo]) {
+                        ramoOptions[selectedTipo].forEach(function (ramo) {
+                            const option = document.createElement("option");
+                            option.value = ramo;
+                            option.textContent = ramo;
+                            ramoSelect.appendChild(option);
+                        });
+                    }
+                });
+
+
+                ramoSelect.addEventListener("change", function () {
+                    const selectedRamos = Array.from(ramoSelect.selectedOptions).map(option => option.value);
+                    atvSelect.innerHTML = '';
+
+                    selectedRamos.forEach(function (ramo) {
+                        if (atividadeOptions[ramo]) {
+                            atividadeOptions[ramo].forEach(function (atividade) {
+                                const option = document.createElement("option");
+                                option.value = atividade;
+                                option.textContent = atividade;
+                                atvSelect.appendChild(option);
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </section>
+
+    <!-- Secção Informações de Parceiros -->
+    <section>
+        <fieldset>
+            <legend>Informacoes de Parceiros</legend>
+            <input type="text" id="cnpj" readonly>
+            <button id="cnpj-btn">Buscar CNPJ</button>
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+
+            <label for="sistema">Sistema:</label>
+            <input type="text" id="sistema" name="sistema">
+
+            <label for="aplic">Aplicação:</label>
+            <input type="text" id="aplic" name="aplic">
+        </fieldset>
+    </section>
+
+    <!-- Secção Produto Concorrente -->
+    <section>
+        <fieldset>
+            <legend>Produto Concorrente</legend>
+            <input type="radio" id="sim" name="sim">
+            <label for="sim">Sim</label>
+
+            <input type="radio" id="nao" name="nao">
+            <label for="nao">Não</label>
+
+            <button id="gerenciar">Gerenciar</button>
+
+            <button id="pedidos">Pedidos</button>
+        </fieldset>
+    </section>
+
+    <section>
+        <legend>Principal/Matriz</legend>
+
+        <button id="add-matriz">Adicionar Matriz Auto</button>
+        <input type="text" id="campo-branco">
+        <button id="add">Adicionar</button>
+
+    </section>
+</body>
+
+</html>
